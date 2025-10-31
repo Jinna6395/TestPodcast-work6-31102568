@@ -1,0 +1,5 @@
+{
+  "name": "Thai Podcast TTS Generator",
+  "description": "A web application that converts a Thai podcast script about digital safety into speech using the Gemini Text-to-Speech API.",
+  "requestFramePermissions": []
+}

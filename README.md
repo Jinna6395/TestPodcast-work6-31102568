@@ -10,11 +10,31 @@ View your app in AI Studio: https://ai.studio/apps/drive/1f2S8_qhWUSlGKkyIqvKHqa
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:**  Node.js (v18 or higher recommended)
 
+### Setup Instructions
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure your Gemini API key:**
+   - Copy the example environment file:
+     ```bash
+     cp .env.local.example .env.local
+     ```
+   - Get your API key from [Google AI Studio](https://aistudio.google.com/apikey)
+   - Open `.env.local` and replace `your_api_key_here` with your actual API key:
+     ```
+     GEMINI_API_KEY=your_actual_api_key_here
+     ```
+
+3. **Run the app:**
+   ```bash
+   npm run dev
+   ```
+   
+4. **Open your browser:**
+   - Navigate to http://localhost:3000
+   - Click "Play Podcast" to generate and play Thai language audio

@@ -2,7 +2,18 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 
 // 1. Initialize the GoogleGenAI client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+const apiKey = process.env.API_KEY as string;
+
+if (!apiKey || apiKey === 'undefined' || apiKey === 'null') {
+  throw new Error(
+    'GEMINI_API_KEY is not configured. Please:\n' +
+    '1. Copy .env.local.example to .env.local\n' +
+    '2. Add your Gemini API key from https://aistudio.google.com/apikey\n' +
+    '3. Restart the development server'
+  );
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 // 2. Audio Decoding Utilities (as per Gemini documentation)
 function decode(base64: string): Uint8Array {
